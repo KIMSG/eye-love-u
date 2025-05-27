@@ -2,8 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReviewSlider from "../components/ReviewSlider";
 import ContactButton from "../components/ContactButton";
+import ServiceCard from "../components/ServiceCard";
 
 const Home = () => {
+    const services = [
+    {
+        title: "내추럴 펌",
+        description: "자연스럽고 깔끔한 C컬 연출",
+        price: "₩40,000",
+        imgUrl: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220213_20%2F1644713108784dSzTo_JPEG%2F83227FE4-4A43-42D8-B984-C2D86455935B.jpeg",
+    },
+    {
+        title: "볼륨 펌",
+        description: "눈매를 또렷하게! 강한 컬감의 D컬",
+        price: "₩45,000",
+        imgUrl: "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220213_108%2F1644713210156zuYiP_JPEG%2F240D0836-858C-42A8-9433-2B044006C8A2.jpeg",
+    },
+    {
+        title: "속눈썹 연장",
+        description: "1:1 맞춤 연장, 자연스러운 볼륨감",
+        price: "₩60,000 ~ ₩80,000",
+        imgUrl: "https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220213_132%2F16447132103528owUP_JPEG%2F92A64525-D708-495D-812F-958567A734FF.jpeg",
+    },
+  ];
+
   return (
     <main>
 
@@ -30,18 +52,17 @@ const Home = () => {
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-8">인기 시술</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* 간단한 카드 예시 */}
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-pink-600 font-bold text-lg mb-1">내추럴 펌</h3>
-            <p className="text-gray-600 text-sm">자연스러운 C컬 연출 / ₩40,000</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-pink-600 font-bold text-lg mb-1">볼륨 펌</h3>
-            <p className="text-gray-600 text-sm">D컬로 강한 인상 연출 / ₩45,000</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <h3 className="text-pink-600 font-bold text-lg mb-1">속눈썹 연장</h3>
-            <p className="text-gray-600 text-sm">맞춤 디자인 연장 / ₩60,000~₩80,000</p>
-          </div>
+
+          {services.map((service, index) => (
+            <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  price={service.price}
+                  imgUrl={service.imgUrl}
+            />
+          ))}
+
         </div>
       </section>
 
@@ -49,17 +70,7 @@ const Home = () => {
       <section className="bg-pink-50 text-center py-20 px-4">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">지금 바로 예약하고 예뻐지세요 💕</h2>
         <p className="text-gray-600 mb-6">네이버 예약 또는 톡톡으로 간편하게 문의하세요!</p>
-        {/* <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="https://m.booking.naver.com/booking/13/bizes/534394/items/3951042?theme=place&service-target=map-pc&lang=ko&area=bmp"  // 실제 네이버 예약 링크로 교체 
-            target="_blank"
-             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded" rel="noreferrer">
-            💚 네이버 예약하기
-          </a>
-          <a href="https://talk.naver.com/ct/w4kvle?frm=mnmb&frm=nmb_detail#nafullscreen"  target="_blank"
-             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded" rel="noreferrer">
-            💬 톡톡 문의하기
-          </a>
-        </div> */}
+        
         <ContactButton />
 
         

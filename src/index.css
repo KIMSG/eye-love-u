@@ -3,16 +3,38 @@
 @tailwind utilities;
 
 
+/* 글로벌 스타일 예시 */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Pretendard', sans-serif;
+  /* background-color: #fffaf7; */
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
 }
+
+button {
+  background-color: #ffb6b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff9494;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  margin-bottom: 24px;
+}
+
